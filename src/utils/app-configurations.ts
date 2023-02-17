@@ -1,4 +1,3 @@
-import { AppTab } from "./types";
 
 export const defaultPassword = "newUser@2023";
 const appConfigs = () => {
