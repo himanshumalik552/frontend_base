@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic,cyrillic-ext,greek-ext,greek,vietnamese");
+@import url("https://js.arcgis.com/4.19/@arcgis/core/assets/esri/themes/light/main.css");
+.App {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #2a3448;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #404c64;
+}
+
+.datepicker-control-section {
+  max-width: 246px;
+  margin: 30px auto;
+  padding-top: 52px;
+}

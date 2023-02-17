@@ -1,0 +1,10 @@
+{
+  "error.network": "Network error occurred. Error code {{status_code}}. Please try again",
+  "package_detail": "Package Detail",
+  "river_work_title": "River Works Investment in Beki and Buridehing River Basins",
+  "package_progress": "River Works Package Progress",
+  "physical_progress": "Physical progress (%)",
+  "financial_progress": "Financial progress (%)",
+  "view_details": "View details",
+  "package.river.works": "River works in '{{package_name}}'"
+}
