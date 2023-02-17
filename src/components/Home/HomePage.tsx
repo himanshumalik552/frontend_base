@@ -7,12 +7,11 @@ import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { AppContext } from "../../App";
 import { getData } from "../../utils/ApiRequest";
-import { getBasinsUrl, getLookupStatusUrl, getUserUrl } from "../../utils/apiUrls";
+import { getLookupStatusUrl, getUserUrl } from "../../utils/apiUrls";
 import { queryOptions } from "../../utils/app-configurations";
 import { dataFetchKeys } from "../../utils/app-constants";
-import { Basin, Status, User } from "../../utils/types";
+import {  Status, User } from "../../utils/types";
 import SkeletonWaitingTable from "../common/WaitingSkeleton";
-import BasinCard from "./BasinCard";
 
 const StyledBox = styled(Box)<BoxProps>(({ theme }) => ({
     marginTop: theme.spacing(8),
@@ -38,11 +37,11 @@ const StyledGrid = styled(Grid)<GridProps>(({ theme }) => ({
     justifyContent: 'space-evenly',
 }));
 
-export default function BasinsPage() {
+export default function HomePage() {
     const [t] = useTranslation(["general-basin"]);
     const appContext = React.useContext(AppContext);
     const { state, dispatch } = appContext;
-    const { token, basins } = state;
+    const { token} = state;
 
     const {
         data: currentUser,
@@ -56,17 +55,6 @@ export default function BasinsPage() {
         queryOptions
     );
 
-    const {
-        data: basinList,
-        isLoading: basinListLoading,
-    } = useQuery<Basin[]>(
-        [dataFetchKeys.basins],
-        async () => {
-            const result = await getData(getBasinsUrl, token);
-            return await result.json()
-        },
-        queryOptions
-        );
 
     const {
         data: statusList,
@@ -81,10 +69,6 @@ export default function BasinsPage() {
     );
 
     useEffect(() => {
-        dispatch({ type: "setBasins", value: basinList || [] });
-    }, [dispatch, basinList])
-
-    useEffect(() => {
         dispatch({ type: "setCurrentUser", value: currentUser || null });
     }, [dispatch, currentUser])
 
@@ -94,13 +78,12 @@ export default function BasinsPage() {
 
     const loading =
         currentUserLoading ||
-        basinListLoading ||
         statusListLoading;
 
     return (
         loading ? <SkeletonWaitingTable /> :
             <React.Fragment>
-                {basins.length > 0 &&
+             
                     <StyledBox sx={{ width: '100%' }}>
                         <Typography variant="h1">
                             {"Component 2.1"}
@@ -109,11 +92,9 @@ export default function BasinsPage() {
                             {t('river_work_title')}
                         </Typography>
                         <StyledGrid>
-                            {basins.map((basin) =>
-                                <BasinCard key={basin.id} basin={basin} />
-                            )}
+                        <>Home Page</>
                         </StyledGrid>
-                    </StyledBox>}
+                    </StyledBox>
             </React.Fragment>
     );
 };

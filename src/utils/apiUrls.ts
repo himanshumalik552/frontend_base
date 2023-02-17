@@ -20,30 +20,6 @@ export const deleteUserUrl = (userId: string) => {
 }
 export const getUserRoleUrl = `${backendUrl}user-role`;
 export const updateUserRoleUrl = `${backendUrl}user-role`;
-export const getBasinsUrl = `${backendUrl}basin`;
-export const getBasinPackagesUrl = (basinId: string) => {
-    return `${backendUrl}basin-package/${basinId}`;
-}
-export const getRiverWorkUrl = (basinPackageId: string) => {
-    return `${backendUrl}river-work/${basinPackageId}`;
-}
-export const getPhysicalProgressUrl = (basinPackageId: string) => {
-    return `${backendUrl}physical-progress/${basinPackageId}`;
-}
-export const postPhysicalProgressUrl = (basinPackageId: string) => {
-    return `${backendUrl}physical-progress/${basinPackageId}`;
-}
-export const updatePhysicalProgressUrl = (Id: string) => {
-    return `${backendUrl}physical-progress/${Id}`;
-}
-export const getFinancialProgressUrl = (basinPackageId: string) => {
-    return `${backendUrl}financial-progress/${basinPackageId}`;
-}
-export const postFinancialProgressUrl = (basinPackageId: string) => {
-    return `${backendUrl}financial-progress/${basinPackageId}`;
-}
-export const updateFinancialProgressUrl = (Id: string) => {
-    return `${backendUrl}financial-progress/${Id}`;
-}
+
 export const getLookupRolesUrl = `${backendUrl}lookup/roles`;
 export const getLookupStatusUrl = `${backendUrl}lookup/status`;

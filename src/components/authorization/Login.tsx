@@ -59,7 +59,7 @@ export default function Login(props: LoginProps) {
     const { setAuthenticated } = props;
     const [t] = useTranslation();
 
-    const [email, setEmail] = useState("kaushal.sharma@rhdhv.com");
+    const [email, setEmail] = useState("himanshu.himanshu@rhdhv.com");
     const [password, setPassword] = useState("newUser@2023");
     const [isBusy, setIsBusy] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
